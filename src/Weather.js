@@ -35,7 +35,7 @@ const Weather = () => {
     const renderWeatherItem = (forecast) => {
       return (
         <div>
-          <WeatherCard forecast={forecast} />
+          <WeatherCard forecast={forecast}/>
         </div>
       )
     }
