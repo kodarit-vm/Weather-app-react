@@ -12,6 +12,11 @@ const useStyles = makeStyles(() => ({
     },
     biggerFont: {
       fontSize: '5vw'
+    },
+    row: {
+      display: 'flex',
+      flexDirection: 'row',
+      flexWrap: 'wrap'
     }
 }))
 
@@ -34,7 +39,7 @@ const Weather = () => {
 
     const renderWeatherItem = (forecast) => {
       return (
-        <div>
+        <div style={{ padding: 10 }} key={forecast.dt}>
           <WeatherCard forecast={forecast}/>
         </div>
       )
@@ -53,7 +58,7 @@ const Weather = () => {
             Aurinko laskee klo: {formatTime(forecasts.city.sunset)}
           </div>
         </div>
-        <div>
+        <div className={classes.row}>
           {forecasts.list.map(forecast => renderWeatherItem(forecast))}
         </div>
       </div>
